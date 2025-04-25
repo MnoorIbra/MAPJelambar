@@ -69,8 +69,10 @@
             }
         });
         document.addEventListener('DOMContentLoaded', function () {
+
+            if(!L.DomUtil.get('map')._leaflet_map){
             // Initialize the map
-            var map = L.map('map').setView([-6.1542, 106.7917], 15); // Default view (Jelambar)
+                var map = L.map('map').setView([-6.1542, 106.7917], 15); // Default view (Jelambar)
 
             // Add a tile layer (you can change the provider)
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -100,6 +102,7 @@
                     map.setView([latitude, longitude], 17);
                 }
             });
+        }
         });
 
     </script>
